@@ -23,7 +23,6 @@ export const removeContact = async (contactId) => {
   if (contactIndex === -1) {
     return null;
   }
-  console.log("remove contact", contactIndex);
   const [ result ] = contacts.splice(contactIndex, 1);
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
   return result;
